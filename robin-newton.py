@@ -190,8 +190,13 @@ def run(rad1,           # R₁
 	for i in range(dtime_int):
 		s = s.getNext()
 
-	return map(lambda i:sum(i)/2,
-	           pair(s.get()))
+	yield temp1
+
+	for t in map(lambda i:sum(i)/2,
+	             pair(s.get())):
+		yield t
+
+	yield temp2
 #def run():
 
 def main():
