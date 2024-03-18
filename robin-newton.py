@@ -3,6 +3,8 @@
 Project 'Robin-Newton' (RN)
 See:
 1. Тестовое_задание_по_численным_методам.docx
+2. Части "математическая постановка задачи" и "численный метод" по ссылке: https://docs.google.com/document/d/1yJ9DMjvC3wu9AfAU4ENC8eFZgz_kq7e430SLJj0Sjt8/edit?usp=sharing
+3. Копия условия задачи: https://docs.google.com/document/d/1Y_SM1xSkq_DAGMlGw02bsXH4HyZxXd_Z/edit?usp=sharing&ouid=110237950124914475014&rtpof=true&sd=true
 '''
 from math       import pi
 from itertools  import count
@@ -204,8 +206,6 @@ def main():
 	from json       import load
 	from csv        import reader
 
-	dtime_int = 5
-
 	name_param = argv[1]
 	data_name  = argv[2]
 
@@ -219,7 +219,7 @@ def main():
 			ret = run(param['R_1'],
 			          param['R_2'],
 			          param['Deltat'],
-				  dtime_int,
+				  param['dtime_int'],
 			          param['ro'],
 			          param['C_ro'],
 			          param['lambda'],
