@@ -206,6 +206,9 @@ def main():
 	from json       import load
 	from csv        import reader
 
+	from sys        import getrecursionlimit
+	from sys        import setrecursionlimit
+
 	name_param = argv[1]
 	data_name  = argv[2]
 
@@ -229,6 +232,11 @@ def main():
 			          param['alpha_2'],
 			          param['T_1'],
 			          param['T_2'])
+
+			rl = getrecursionlimit()
+			if rl/2 < param['dtime_int']:
+				setrecursionlimit(2 * param['dtime_int'])
+
 			print(';'.join(map(str, ret)))
 
 if __name__ == "__main__":
